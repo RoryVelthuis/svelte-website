@@ -1,12 +1,10 @@
 <script>
+    import { slide } from 'svelte/transition'
     export let mobile;
     let links = [ {title: "About", ref: "/about"}, {title: "Gallery", ref: "/gallery"} ]
-    $: {
-        console.log(mobile)
-    }
 </script>
 
-<nav class="{mobile ? "mobile-nav" : "" }">
+<nav transition:slide class="{mobile ? "mobile-nav" : "" }">
     <ul class="{mobile ? "nav-list-mobile" : "nav-list"}">
         {#each links as link}
             <li class="nav-li"><a class="nav-link" href={link.ref}>{link.title}</a></li>
@@ -26,14 +24,13 @@
     }
 
     .nav-list-mobile .nav-li{
-        width: 100%;    
+        width: 100%;
     }
 
     .nav-list-mobile .nav-li:not(:last-child){
         border-bottom: 1px solid whitesmoke; 
         border-image: linear-gradient(90deg, rgba(158,204,220,1) 0%, rgba(255,255,255,1) 50%, rgba(158,204,220,1) 100%);
         border-image-slice: 1;
-
     }
 
     .nav-list-mobile .nav-li .nav-link{
@@ -44,6 +41,7 @@
         font-size: 1.75rem;
     }
 
+    
     /* Desktop */
 
     nav{
