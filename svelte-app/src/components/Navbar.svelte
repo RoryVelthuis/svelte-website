@@ -65,7 +65,7 @@ import Hamburger from '../images/hamburger.png'
         background-color: rgb(140, 195, 213);
     }
     .hamburger-icon{
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 </style>

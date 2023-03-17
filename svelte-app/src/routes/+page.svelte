@@ -3,6 +3,6 @@
 </script>
 
 
-<div>
+<!-- <div>
     <Navbar />
-</div>
+</div> -->
