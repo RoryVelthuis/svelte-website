@@ -1,10 +1,14 @@
 
 <script>
-import NavList from '../components/NavList.svelte'
+import { fly } from 'svelte/transition'
 import Hamburger from '../images/hamburger.png'
+import NavDesktop from './NavDesktop.svelte';
+import NavMobile from './NavMobile.svelte';
+
+let links = [ {title: "About", ref: "/about"}, {title: "Gallery", ref: "/gallery"} ]
 
     let menuActive = false;
-    let collapsed;
+    let collapsed
     let width;
     $: {
         if(width <= 600){
@@ -13,6 +17,7 @@ import Hamburger from '../images/hamburger.png'
             menuActive = false;
             collapsed = false
         }
+        console.log(collapsed,width)
     }
 
     const toggleMenu = () => {
@@ -25,16 +30,19 @@ import Hamburger from '../images/hamburger.png'
 
 <section class="nav-header">
     <a href="/"><h1 class="title">Svelte App</h1></a>
-    {#if collapsed}
-    <div class="hamburger-icon-container" on:click={toggleMenu} on:keydown={toggleMenu}>
-        <img class="hamburger-icon" src={Hamburger} alt="">
-    </div>
-    {:else}
-    <NavList mobile={false} />
+    {#if width != null}
+        {#if collapsed}
+        <div class="hamburger-icon-container" on:click={toggleMenu} on:keydown={toggleMenu}>
+            <img class="hamburger-icon" src={Hamburger} alt="">
+        </div>
+        {:else}
+        <NavDesktop links={links} />
+        {/if}
     {/if}
+
 </section>
 {#if menuActive}
-<NavList mobile={true} />
+<NavMobile links={links} />
 {/if}
 
 <style>
@@ -51,7 +59,8 @@ import Hamburger from '../images/hamburger.png'
         justify-content: space-between;
         height: 80px;
         padding: 0px 40px;
-        position: relative
+        position: relative;
+        z-index: 1;
     }
 
     .hamburger-icon-container{
