@@ -1,7 +1,7 @@
 
 <script>
 import { fly } from 'svelte/transition'
-import Hamburger from '../images/hamburger.png'
+import Hamburger from '../../images/hamburger.png'
 import NavDesktop from './NavDesktop.svelte';
 import NavMobile from './NavMobile.svelte';
 
@@ -17,7 +17,6 @@ let links = [ {title: "About", ref: "/about"}, {title: "Gallery", ref: "/gallery
             menuActive = false;
             collapsed = false
         }
-        console.log(collapsed,width)
     }
 
     const toggleMenu = () => {
@@ -60,7 +59,7 @@ let links = [ {title: "About", ref: "/about"}, {title: "Gallery", ref: "/gallery
         height: 80px;
         padding: 0px 40px;
         position: relative;
-        z-index: 1;
+        z-index: 10;
     }
 
     .hamburger-icon-container{
