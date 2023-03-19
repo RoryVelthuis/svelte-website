@@ -33,6 +33,7 @@
     }
 
     .nav-link{
+        color: white;
         width: 100%;
         display: flex;
         justify-content: center;

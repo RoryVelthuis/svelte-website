@@ -2,13 +2,31 @@
 
 </script>
 
-
-<div class="loading-circle">
-    <div class="circle"></div>
+<div class="load-container">
+    <div class="inner-container">
+        <div class="loading-circle">
+            <div class="circle"></div>
+        </div>
+    </div>
 </div>
 
 
+
+
 <style>
+    .load-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .inner-container{
+        height: 300px;
+        width: 300px;
+    }
+
     .loading-circle{
         display: flex;
         align-items: center;

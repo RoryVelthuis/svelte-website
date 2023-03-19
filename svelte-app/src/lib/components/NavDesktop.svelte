@@ -33,6 +33,7 @@
     }
 
     .nav-link{
+        color: white;
         font-size: 1.35rem;
         text-decoration: none;
         display: flex;
@@ -42,7 +43,6 @@
     }
 
     .nav-link:hover{
-        background-color: rgb(140, 195, 213);
-    }
+        background-color: rgb(15, 15, 15)    }
 
 </style>

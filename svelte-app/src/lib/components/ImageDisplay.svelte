@@ -18,7 +18,7 @@
     {:else}
     <div class="load-container">
         <div class="inner-container">
-            <LoadingCircle />
+            <!-- <LoadingCircle /> -->
         </div>
     </div>
     {/if}
@@ -26,6 +26,7 @@
 
 <style>
     .container{
+        aspect-ratio: 16 / 9;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -77,15 +78,5 @@
         object-position: center;
     }
 
-    .load-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-    }
-    .inner-container{
-        height: 300px;
-        width: 300px;
-    }
+
 </style>

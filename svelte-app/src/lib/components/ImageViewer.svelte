@@ -2,6 +2,7 @@
     import ImageDisplay from "./ImageDisplay.svelte";
     import ImageGrid from "./ImageGrid.svelte";
     import { createRequests } from "../js/LoremPicsum";
+    import LoadingCircle from "./LoadingCircle.svelte";
 
     const height = 1080;
     const width = 1920;
@@ -29,10 +30,14 @@
 
 <div class="image-viewer">
     <div class="responsive-rect">
+        {#if urls.length != 0}
         <ImageDisplay img={urls[index]} next={next} previous={previous}/>
         <div class="square">
             <ImageGrid urls={urls} index={index} onClick={setIndex} />
         </div>
+        {:else}
+            <LoadingCircle />
+        {/if}
     </div>
 </div>
 
@@ -43,14 +48,15 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin: 0px 0px;
+        padding: 40px 0px;
+        background-color: rgb(30, 30, 30);
     }
     .responsive-rect{
         aspect-ratio: 16 / 6;
         display: flex;
         align-content: center;
         justify-content: center;
-        width: 100%;
+        width: 85%;
         height: 100%;
     }
     .square{

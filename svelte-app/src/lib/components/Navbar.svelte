@@ -46,13 +46,14 @@ let links = [ {title: "About", ref: "/about"}, {title: "Gallery", ref: "/gallery
 
 <style>
     .title{
+        color: white;
         display: flex;
         align-items: center;
         cursor: pointer;
     }
 
     .nav-header{
-        background-color: lightblue;
+        background-color: rgb(0, 0, 0);
         box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.75);
         display: flex;
         justify-content: space-between;

@@ -79,7 +79,7 @@
         {:else}
             {#each Array(9) as _, i}
             <div class="grid-item">
-                <LoadingCircle />
+                <!-- <LoadingCircle /> -->
             </div>  
             {/each}
         {/if}
