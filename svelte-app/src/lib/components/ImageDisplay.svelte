@@ -6,6 +6,17 @@
     export let img;
     export let next;
     export let previous;
+
+    let t = 0
+    let interval = 3;
+    $: {
+        setTimeout(() => {
+            t = (t + 1) % interval;
+        }, 1000)
+        if(t == interval - 1){
+            next()
+        }
+    }
 </script>
 
 <div class="container">
@@ -58,7 +69,7 @@
         flex-direction: column;
         justify-content: center;
         height: 100%;
-        width: 4%;
+        width: 5%;
     }
     .side-band:hover{
         cursor: pointer;

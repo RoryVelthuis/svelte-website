@@ -7,6 +7,7 @@
     export let urls;
     export let index;
     export let onClick;
+    console.log(urls)
 
     // Variables
     let hover;
