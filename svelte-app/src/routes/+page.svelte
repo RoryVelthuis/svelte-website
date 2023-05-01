@@ -6,10 +6,12 @@
     import Grid from "../lib/components/Grid.svelte"
     import ImageViewer from "../lib/components/ImageViewer.svelte";
     import ResponsiveRectangle from "../lib/components/ResponsiveRectangle.svelte";
+    import Articles from "../lib/components/Articles.svelte";
 </script>
 
 <section>
     <ImageViewer />
+    <Articles />
 </section>
 <section>
     <!-- <ResponsiveRectangle /> -->
@@ -26,3 +28,4 @@
         justify-content: center;
     }
 </style>
+
